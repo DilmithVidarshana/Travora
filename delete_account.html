@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - Travora</title>
+    <style>
+        :root {
+            --primary-color: #000000;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --text-color: #333333;
+            --error-color: #d32f2f;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary-color);
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+            transition: border-color 0.3s;
+        }
+
+        input[type="email"]:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #333333;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 15px;
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Delete My Account</h1>
+        <p>We are sorry to see you go. Please verify your email address below to initiate the permanent deletion of your Travora account and all associated data.</p>
+
+        <div class="warning-box">
+            <strong>⚠️ Warning:</strong> This action is irreversible. All your chat history, saved travel schedules, and profile data will be permanently removed.
+        </div>
+
+        <form id="deleteForm">
+            <div class="form-group">
+                <label for="email">Account Email Address</label>
+                <input type="email" id="email" name="email" placeholder="e.g. user@example.com" required>
+            </div>
+
+            <button type="submit" class="btn">Send Deletion Request</button>
+        </form>
+
+        <a href="index.html" class="back-link">← Back to App Support</a>
+
+        <div class="footer">
+            &copy; 2026 Travora. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('deleteForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent standard form submission
+
+            // 1. Get the email user typed
+            const userEmail = document.getElementById('email').value;
+            const developerEmail = "dila323at@gmail.com";
+
+            // 2. Construct the Email Content
+            const subject = encodeURIComponent("Request for Account Deletion - Travora App");
+            const body = encodeURIComponent(
+                "Hello Travora Support,\n\n" +
+                "I am requesting the permanent deletion of my account associated with the following email address:\n\n" +
+                "User Email: " + userEmail + "\n\n" +
+                "I understand that this action will delete all my data including chat history and saved preferences.\n\n" +
+                "Sincerely,\n" + userEmail
+            );
+
+            // 3. Open the User's Email Client
+            // This is the most secure way for static sites as it verifies the sender identity.
+            window.location.href = `mailto:${developerEmail}?subject=${subject}&body=${body}`;
+
+            // 4. Optional: Show a message on the web page
+            alert("We are opening your email app to send the request.\nPlease press 'Send' in your email app to confirm.");
+        });
+    </script>
+
+</body>
+</html>
