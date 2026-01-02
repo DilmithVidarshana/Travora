@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travora - App Support</title>
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #757575;
+            --bg-color: #ffffff;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: var(--primary-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            width: 100%;
+            max-width: 480px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            margin: 20px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background-color: #000;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        p.subtitle {
+            color: var(--secondary-color);
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px 0;
+            margin-bottom: 16px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        /* Primary Button (Black) */
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #333333;
+            border-color: #333333;
+        }
+
+        /* Secondary Button (Outlined) */
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: var(--secondary-color);
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo Placeholder (T for Travora) -->
+        <div class="logo">T</div>
+        
+        <h1>Travora</h1>
+        <p class="subtitle">Travel the world with your AI Assistant.</p>
+
+        <!-- Navigation Buttons -->
+        <a href="privacy_policy.html" class="btn btn-secondary">View Privacy Policy</a>
+        <a href="delete_account.html" class="btn btn-primary">Request Account Deletion</a>
+
+        <div class="footer">
+            &copy; 2026 Travora. All rights reserved.<br>
+            Developer: Dilmith
+        </div>
+    </div>
+
+</body>
+</html>
